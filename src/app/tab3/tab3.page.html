@@ -1,17 +1,59 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col>NOMBRE<ion-input [(ngModel)]="producto.nombre" id="txtNombre"
+      ></ion-input>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col>DESCRIPCION<ion-input [(ngModel)]="producto.descripcion" id="txtNombre"
+      ></ion-input>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col>PRECIO<ion-input [(ngModel)]="producto.precio" id="txtNombre"
+      ></ion-input>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col>STOCK<ion-input [(ngModel)]="producto.stock" id="txtNombre"
+      ></ion-input>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col>
+      <ion-button (click)="guardar();">GUARDAR</ion-button>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+
+<ion-list>
+  <ion-list-header>
+    Productos
+  </ion-list-header>
+  <ion-item *ngFor="let producto of listaProductos" >
+    <ion-avatar slot="start">
+      <img
+        src="">
+    </ion-avatar>
+    <ion-label>
+      <h3>Nombre: {{producto.nombre}}</h3>
+      <h3>Descripcion: {{producto.descripcion}}</h3>
+      <h3>Precio: {{producto.precio}}</h3>
+      <h3>Stock: {{producto.stock}}</h3>
+    </ion-label>
+  </ion-item>
+
+</ion-list>
 </ion-content>
